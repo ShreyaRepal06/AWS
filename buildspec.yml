@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo installing Ngnix
+      - sudo apt update
+      - sudo apt install ngnix -y
+  build:
+    commands:
+      - echo Build start
+      - cp index.html /var/www/html
+  post_build:
+    commands:
+      - echo configuring Nginx server
+
+artifacts:
+  files:
+    - /var/www/html/index.html
+
